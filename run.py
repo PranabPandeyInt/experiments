@@ -2,6 +2,7 @@ import os
 import yaml
 from pathlib import Path
 path_directory = os.getcwd()
+print(path_directory)
 file = Path(path_directory ).glob('**/*.yaml')
 print(file)
 for filename in file:
