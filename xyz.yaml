@@ -1,0 +1,7 @@
+name: testyaml
+platforms:
+  - android
+  - ios
+spaces:
+  tray: TraySpace
+  header: TrayHeaderSpace
