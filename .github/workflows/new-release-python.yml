@@ -1,4 +1,4 @@
-name: Update ONE-VIEW on new release
+name: run script on new release
 on:
   # Triggers the workflow on new release
   release:
@@ -13,11 +13,14 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
         with:
-          script: |
-            import os
-            print("Directory contents:")
-            for f in os.listdir():
-                print(f)
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          python run.py
+        env:
+          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
