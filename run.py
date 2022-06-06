@@ -1,8 +1,7 @@
 import os
 import yaml
 from pathlib import Path
-path = os.getcwd()
-path_directory = path+'page'
+path_directory = os.getcwd()
 file = Path(path_directory ).glob('*')
 for filename in file:
     yaml_file = open(filename)
