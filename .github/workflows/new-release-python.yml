@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: PranabPandeyInt/experiments@v1
+      - uses: PranabPandeyInt/experiments
         with:
           script: |
             import os
